@@ -32,8 +32,8 @@ google.charts.load('current', {packages: ['table']});
 var visualization;
 
 function drawVisualization() {
-   var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1a9zRaD9U7jahmV6_elxAynSBXuwWqCzW--4hK7arP98&output=html&gid=1975584105&range=A2:M&&usp=sharing');
-    query.setQuery('SELECT A, B, C, D, E, F, G, H, I, J, K, L, M label A "Bulan", B "Tulus", C "Ket", D "Wiji", E "Ket", F "Mizan", G "Ket", H "Tomo", I "Ket", J "Vian", K "Ket", L "Joko", M "Ket"');
+   var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1a9zRaD9U7jahmV6_elxAynSBXuwWqCzW--4hK7arP98&output=html&gid=1975584105&range=O2:Q&&usp=sharing');
+    query.setQuery('SELECT O, p, Q label O "Nama", P "Nilai", Q "Predikat"');
     query.send(handleQueryResponse);
    
 }
