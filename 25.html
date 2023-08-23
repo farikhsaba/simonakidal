@@ -115,12 +115,12 @@
       var table = $('#dataTable').DataTable({
         data: dataArray,
         columnDefs: [
-          { targets: [0, 1, 2, 4], className: 'all' },
+          { targets: [0, 1, 4], className: 'all' },
           {
             targets: 0,
             render: function (data, type, row) {
               // Format date column
-              return moment(data).format('DDD MMM YYYY'); // Using moment.js for formatting
+              return moment(data).format('DD MMM YYYY'); // Using moment.js for formatting
             }
           },
           {
@@ -136,7 +136,7 @@
           { title: "Nama" },
           { title: "Jenis Izin" },
           { title: "Keperluan" },
-          { title: "Jam" },
+          { title: "Jam Keluar/Kembali" },
         ],
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "all"]],
         order: [[0, 'desc']], // Sort by column 0 (Tanggal) descending
