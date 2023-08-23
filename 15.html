@@ -18,9 +18,6 @@
       .container-fluid {
         padding: 10px;
       }
-      .navbar h5 {
-        font-size: 1rem;
-      }
       #dataTable {
         font-size: 12px;
       }
@@ -39,17 +36,20 @@
     #dataTable_info {
       font-size: 12px;
     }
+    /* Centered title styles */
+    .centered-title {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
     /* Add more custom styling here */
   </style>
 </head>
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary mb-3">
-      <div class="container-fluid">
-        <h5 class="text-white"> Rekap Pekerjaan </h5>
-      </div>
-    </nav>
+    <div class="centered-title">Rekap Pekerjaan</div>
   </header>
 
   <main class="container-fluid">
@@ -61,8 +61,8 @@
   </main>
 
   <footer class="text-muted text-center mt-2">
-    <p style="font-size:12px;"> &copy; DPD RI DIY 2023 <a style="color:green;text-decoration:none" href=""
-        target="_blank"></a></p>
+    <p style="font-size:12px;"> &copy; 2023 <a style="color:green;text-decoration:none" href=""
+        target="_blank">Contact</a></p>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -116,7 +116,7 @@
             { title: "Nilai" },
           ],
           lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "all"]],
-          order: [[5, 'desc']], // Sort by column 5 (Pelaksanaan) descending
+          order: [[2, 'asc']], // Sort by column 2 (Area) ascending
           destroy: true,
         });
       });
