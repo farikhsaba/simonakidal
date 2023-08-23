@@ -115,7 +115,7 @@
       var table = $('#dataTable').DataTable({
         data: dataArray,
         columnDefs: [
-          { targets: [0, 1, 2,3, 4], className: 'all' },
+          { targets: [0, 1, 4], className: 'all' },
           {
             targets: 0,
             render: function (data, type, row) {
@@ -136,7 +136,7 @@
           { title: "Nama" },
           { title: "Jenis Izin" },
           { title: "Keperluan" },
-          { title: "Jam" },
+          { title: "Jam Keluar/Kembali" },
         ],
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "all"]],
         order: [[0, 'desc']], // Sort by column 0 (Tanggal) descending
@@ -147,6 +147,7 @@
 
   google.setOnLoadCallback(drawVisualization);
 </script>
+
 
 </body>
 
