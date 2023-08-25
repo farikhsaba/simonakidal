@@ -46,7 +46,7 @@ function handleQueryResponse(response) {
     
     var data = response.getDataTable();
     visualization = new google.visualization.Table(document.getElementById('table'));
-    data.sort([{column: 0, desc: false},{column: 2, desc: false}]);
+    data.sort([{column: 5, desc: true},{column: 4, desc: true}]);
     visualization.draw(data, {
         allowHtml: true,
         legend: 'bottom'
