@@ -1,62 +1,219 @@
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta content="ie=edge" http-equiv="x-ua-compatible">
-  <title>SIMONAKIDAL</title>
-  <meta content="SIMONAKIDAL" name="description">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet" />
-
-   <script src="https://www.gstatic.com/charts/loader.js"></script>
-</head>
-
-<body id="background">
-  <div id="box">
-    <h3>Area Pekerjaan</h3>
-    <script>
-        /*!
- * 
- * Google Sheets To HTML v0.9b
- * 
- * To use, simply replace the "tq?key=" value in the
- * URL below with your own unique Google document ID
- * 
- * The Google document's sharing must be set to public
- * 
- */
-
-google.charts.load('current', {packages: ['table']});
-var visualization;
-
-function drawVisualization() {
-  var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1a9zRaD9U7jahmV6_elxAynSBXuwWqCzW--4hK7arP98&output=html&gid=355470401&range=A2:D&&usp=sharing');
-    query.setQuery('SELECT A, B, C, D  label A "ID", B "Area", C "Nama Pekerjaan", D "Waktu Pelaksanaan"');
-    query.send(handleQueryResponse);
-   
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500|Open+Sans">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<style>
+body {
+  background: #23384e;
+}
+.accordion .card {
+  border: none;
+  margin-bottom: 2px;
+}
+.accordion .card-header {
+  background: #21c2a2;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.accordion .card-header h2 {
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+.accordion .card-header h2 span {
+  float: left;
+  margin-top: 10px;
+}
+.accordion .card-header button {
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  float: right;
+}
+.accordion .card-header button:hover {
+  color: #23384e;
 }
 
-function handleQueryResponse(response) {
-    if (response.isError()) {
-        alert('There was a problem with your query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-        return;
+
+   iframe {
+      border: none;
+      width: 100%;
+      
     }
-    
-    var data = response.getDataTable();
-    visualization = new google.visualization.Table(document.getElementById('table'));
-    data.sort([{column: 0, desc: false},{column: 2, desc: false}]);
-    visualization.draw(data, {
-        allowHtml: true,
-        legend: 'bottom'
-    });
+
+    /* Style the table within the iframe */
+    iframe table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    iframe th, iframe td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    /* Make the table responsive on smaller screens */
+    @media (max-width: 600px) {
+      iframe th, iframe td {
+        font-size: 12px; /* Reduce font size on smaller screens */
+      }
+    }
+
+.header {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
 }
-google.setOnLoadCallback(drawVisualization);
-    </script>
-    <div id="table">
+
+</style>
+<script>
+$(document).ready(function(){
+  // Add minus icon for collapse element which is open by default
+  $(".collapse.show").each(function(){
+    $(this).siblings(".card-header").find(".btn i").addClass("fa-minus-circle").removeClass("fa-plus-circle");
+  });
+  
+  // Toggle plus minus icon on show hide of collapse element
+  $(".collapse").on('show.bs.collapse', function(){
+    $(this).parent().find(".card-header .btn i").removeClass("fa-plus-circle").addClass("fa-minus-circle");
+  }).on('hide.bs.collapse', function(){
+    $(this).parent().find(".card-header .btn i").removeClass("fa-minus-circle").addClass("fa-plus-circle");
+  });
+});
+</script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h5 class="text-white">AREA KERJA TENAGA OPERASIONAL PEMELIHARAAN</h5>
     </div>
-    <p class="small"></p>
+  </header>
+<div class="container">
+   
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="accordion mt-5" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="clearfix mb-0">
+              <span>AREA KERJA LANTAI 1</span>
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><i class="fa fa-plus-circle"></i></button>
+            </h2>
+          </div>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://docs.google.com/spreadsheets/d/1a9zRaD9U7jahmV6_elxAynSBXuwWqCzW--4hK7arP98/gviz/tq?tqx=out:html&tq=&gid=355470401&range=A3:E82" width="100%" frameborder="0"></iframe>
+
+              </div>
+          </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <span>AREA KERJA LANTAI 2</span>
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-plus-circle"></i></button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://docs.google.com/spreadsheets/d/1a9zRaD9U7jahmV6_elxAynSBXuwWqCzW--4hK7arP98/gviz/tq?tqx=out:html&tq=&gid=355470401&range=A85:E162" width="100%" frameborder="0"></iframe>
+              </div>
+          </div>
+
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <span>AREA KERJA LANTAI 3</span>
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i class="fa fa-plus-circle"></i></button>
+            </h2>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="embed-responsive embed-responsive-16by9">
+                 <iframe src="https://docs.google.com/spreadsheets/d/1a9zRaD9U7jahmV6_elxAynSBXuwWqCzW--4hK7arP98/gviz/tq?tqx=out:html&tq=&gid=355470401&range=A165:E276" width="100%" frameborder="0"></iframe>
+              </div>
+                </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h2 class="mb-0">
+              <span>AREA KERJA TAMAN LUAR</span>
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"><i class="fa fa-plus-circle"></i></button>
+            </h2>
+          </div>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://docs.google.com/spreadsheets/d/1a9zRaD9U7jahmV6_elxAynSBXuwWqCzW--4hK7arP98/gviz/tq?tqx=out:html&tq=&gid=355470401&range=A279:E309" width="100%" frameborder="0"></iframe>
+              </div>
+              </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingFive">
+            <h2 class="mb-0">
+              <span>AREA KERJA TAMAN DALAM</span>
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive"><i class="fa fa-plus-circle"></i></button>
+            </h2>
+          </div>
+          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="embed-responsive embed-responsive-16by9">
+                 <iframe src="https://docs.google.com/spreadsheets/d/1a9zRaD9U7jahmV6_elxAynSBXuwWqCzW--4hK7arP98/gviz/tq?tqx=out:html&tq=&gid=355470401&range=A312:E321" width="100%" frameborder="0"></iframe>
+              </div>
+              </div>
+          </div>
+        </div>
+         <div class="card">
+          <div class="card-header" id="headingSix">
+            <h2 class="mb-0">
+              <span>AREA KERJA HALAMAN</span>
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix"><i class="fa fa-plus-circle"></i></button>
+            </h2>
+          </div>
+          <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="embed-responsive embed-responsive-16by9">
+                 <iframe src="https://docs.google.com/spreadsheets/d/1a9zRaD9U7jahmV6_elxAynSBXuwWqCzW--4hK7arP98/gviz/tq?tqx=out:html&tq=&gid=355470401&range=A324:E338" width="100%" frameborder="0"></iframe>
+              </div>
+              </div>
+          </div>
+        </div>
+         <div class="card">
+          <div class="card-header" id="headingSeven">
+            <h2 class="mb-0">
+              <span>AREA KERJA LAIN-LAIN</span>
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven"><i class="fa fa-plus-circle"></i></button>
+            </h2>
+          </div>
+          <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="embed-responsive embed-responsive-16by9">
+                 <iframe src="https://docs.google.com/spreadsheets/d/1a9zRaD9U7jahmV6_elxAynSBXuwWqCzW--4hK7arP98/gviz/tq?tqx=out:html&tq=&gid=355470401&range=A341:E359" width="100%" frameborder="0"></iframe>
+              </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 </body>
 </html>
