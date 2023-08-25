@@ -71,9 +71,33 @@ body {
 
 .header {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
   color: white;
 }
+
+/* Make the iframe container responsive */
+.embed-responsive {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Set the aspect ratio for the iframe */
+.embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+
+/* Style the iframe */
+.embed-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 
 </style>
 <script>
