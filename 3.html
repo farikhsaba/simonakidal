@@ -36,8 +36,8 @@ google.charts.load('current', {packages: ['table']});
 var visualization;
 
 function drawVisualization() {
-  var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1a9zRaD9U7jahmV6_elxAynSBXuwWqCzW--4hK7arP98&output=html&gid=1437003227&range=A2:G&&usp=sharing');
-    query.setQuery('SELECT A, B, C, D, E, F, G  label A "Area", B "Juli", C "Agust", D "Sept", E "Okt", F "Nov", G "Des"');
+  var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1a9zRaD9U7jahmV6_elxAynSBXuwWqCzW--4hK7arP98&output=html&gid=1437003227&range=A1:G&&usp=sharing');
+    query.setQuery('SELECT A, B, C, D, E, F, G');
     query.send(handleQueryResponse);
    
 }
